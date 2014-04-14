@@ -1,0 +1,6 @@
+<Alloy>
+	<Window class="container">
+		<Label id="name"/>
+		<Label id="tagline"/>
+	</Window>
+</Alloy>

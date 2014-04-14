@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="matchWin" title="Your Matches" class="container">
+		<Button width="80%">Filter Results</Button>
+		<TableView id="matchTable">
+		</TableView>
+	</Window>
+</Alloy>

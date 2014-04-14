@@ -1,0 +1,6 @@
+<Alloy>
+  <TableViewRow id="row" onClick="goToProject">
+    <Label id="name"/>
+    <Label id="tagline"/>
+  </TableViewRow>
+</Alloy>

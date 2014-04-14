@@ -1,0 +1,11 @@
+<Alloy>
+	<Window class="container">
+		<Label class="form-label">Email</Label>
+		<TextField id="email" width="80%"/>
+		<Label class="form-label">Password</Label>
+		<TextField id="password" width="80%"/>
+		<Label class="form-label">Confirm Password</Label>
+		<TextField id="passwordconfirmation" width="80%"/>
+		<Button class="button" width="80%">Sign Up</Button>
+	</Window>
+</Alloy>

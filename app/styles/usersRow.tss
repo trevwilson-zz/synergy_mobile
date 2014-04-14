@@ -1,0 +1,5 @@
+"#row": {
+	backgroundColor:"red",
+	layout:"vertical",
+	width:"80%"
+}

@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container">
+		<Label class="Title">Synergy</Label>
+		<Label class="Subtitle">Welcome to Synergy, a platform for collaboration</Label>
+		<Button class="button" width="80%" onClick="goToLogin">Log In</Button>
+		<Button class="button" width="80%" onClick="goToSignup">Sign Up</Button>
+		<Button class="button" width="80%" onClick="skipAuth">Skip Login</Button>
+	</Window>
+</Alloy>
