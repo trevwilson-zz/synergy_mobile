@@ -1,38 +1,38 @@
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "users";
+    this.__controllerPath = "projects";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.userWin = Ti.UI.createWindow({
+    $.__views.projectsWin = Ti.UI.createWindow({
         backgroundColor: "white",
         layout: "vertical",
-        id: "userWin",
-        title: "Users"
+        id: "projectsWin",
+        title: "All Projects"
     });
-    $.__views.userWin && $.addTopLevelView($.__views.userWin);
-    $.__views.usersTable = Ti.UI.createTableView({
-        id: "usersTable"
+    $.__views.projectsWin && $.addTopLevelView($.__views.projectsWin);
+    $.__views.projectTable = Ti.UI.createTableView({
+        id: "projectTable"
     });
-    $.__views.userWin.add($.__views.usersTable);
+    $.__views.projectsWin.add($.__views.projectTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var collection = Alloy.createCollection("users");
+    var collection = Alloy.createCollection("projects");
     collection.fetch({
         success: function() {
             var rows = [];
             _.each(collection.models, function(element) {
-                var controller = Alloy.createController("usersRow", {
+                var controller = Alloy.createController("projectRow", {
                     name: element.attributes.name,
-                    email: element.attributes.email,
+                    tagline: element.attributes.tagline,
                     id: element.attributes.id
                 });
                 var view = controller.getView();
                 rows.push(view);
             });
-            $.usersTable.setData(rows);
+            $.projectTable.setData(rows);
         },
         error: function() {
             Ti.API.error("hmm - this is not good!");

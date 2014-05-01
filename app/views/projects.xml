@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="projectsWin" title="All Projects" class="container">
+		<TableView id="projectTable">
+		</TableView>
+	</Window>
+</Alloy>

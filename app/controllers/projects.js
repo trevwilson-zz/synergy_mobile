@@ -1,4 +1,4 @@
-var collection = Alloy.createCollection('matches');
+var collection = Alloy.createCollection('projects');
 //the fetch method is an async call to the remote REST API. 
 collection.fetch({ 
     success : function(){
@@ -14,7 +14,7 @@ collection.fetch({
             var view = controller.getView();
             rows.push(view);
         });
-		$.matchTable.setData(rows);
+		$.projectTable.setData(rows);
     },
     error : function(){
         Ti.API.error("hmm - this is not good!");

@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container">
-		<Label id="name">Trevor Wilson</Label>
-		<Label id="email">trevwilson16@gmail.com</Label>
+		<Label id="name"></Label>
+		<Label id="email"></Label>
 	</Window>
 </Alloy>

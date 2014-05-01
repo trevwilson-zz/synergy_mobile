@@ -13,17 +13,28 @@ function Controller() {
     });
     $.__views.project && $.addTopLevelView($.__views.project);
     $.__views.name = Ti.UI.createLabel({
-        text: "Synergy",
         id: "name"
     });
     $.__views.project.add($.__views.name);
     $.__views.tagline = Ti.UI.createLabel({
-        text: "A platform for collaboration",
         id: "tagline"
     });
     $.__views.project.add($.__views.tagline);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var args = arguments[0] || {};
+    var id = args.id;
+    var collection = Alloy.createCollection("projects");
+    collection.fetch({
+        success: function() {
+            var project = collection.get(id).toJSON();
+            $.name.text = project.name;
+            $.tagline.text = project.tagline;
+        },
+        error: function() {
+            Ti.API.error("hmm - this is not good!");
+        }
+    });
     _.extend($, exports);
 }
 

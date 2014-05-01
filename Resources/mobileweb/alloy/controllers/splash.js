@@ -5,9 +5,6 @@ function Controller() {
     function goToSignup() {
         Alloy.createController("signup").getView().open();
     }
-    function skipAuth() {
-        Alloy.createController("index").getView().open();
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "splash";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -46,18 +43,10 @@ function Controller() {
     });
     $.__views.splash.add($.__views.__alloyId16);
     goToSignup ? $.__views.__alloyId16.addEventListener("click", goToSignup) : __defers["$.__views.__alloyId16!click!goToSignup"] = true;
-    $.__views.__alloyId17 = Ti.UI.createButton({
-        title: "Skip Login",
-        width: "80%",
-        id: "__alloyId17"
-    });
-    $.__views.splash.add($.__views.__alloyId17);
-    skipAuth ? $.__views.__alloyId17.addEventListener("click", skipAuth) : __defers["$.__views.__alloyId17!click!skipAuth"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     __defers["$.__views.__alloyId15!click!goToLogin"] && $.__views.__alloyId15.addEventListener("click", goToLogin);
     __defers["$.__views.__alloyId16!click!goToSignup"] && $.__views.__alloyId16.addEventListener("click", goToSignup);
-    __defers["$.__views.__alloyId17!click!skipAuth"] && $.__views.__alloyId17.addEventListener("click", skipAuth);
     _.extend($, exports);
 }
 

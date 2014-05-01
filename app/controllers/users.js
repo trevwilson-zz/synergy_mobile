@@ -6,21 +6,13 @@ collection.fetch({
         _.each(collection.models, function(element, index, list){
             // We are looping through the returned models from the remote REST API
             // Implement your custom logic here
-            console.log(element);
             var controller = Alloy.createController('usersRow', {
             	name: element.attributes.name,
             	email: element.attributes.email,
             	id: element.attributes.id
             });
-            console.log('made controller');
             var view = controller.getView();
-            console.log('made view');
             rows.push(view);
-            console.log('pushed to row');
-			// rows.push(Alloy.createController('matchRow', {
-				// name: element.attributes.name,
-				// tagline: element.attributes.tagline
-			// }).getView());
         });
 		$.usersTable.setData(rows);
     },

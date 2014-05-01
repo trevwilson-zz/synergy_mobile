@@ -1,6 +1,8 @@
 function Controller() {
     function goToProject() {
-        Alloy.createController("project").getView().open();
+        Alloy.createController("project", {
+            id: args.id
+        }).getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "matchRow";

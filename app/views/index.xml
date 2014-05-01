@@ -2,7 +2,8 @@
 	<Window class="container" id="win" onOpen="doOpen">
 		<Label class="Subtitle">Welcome to Synergy, a platform for collaboration</Label>
 		<Button class="button" width="80%" onClick="goToMatchmaker">Get Matched</Button>
-		<Button class="button" width="80%">Create a Project</Button>
 		<Button class="button" width="80%" onClick="goToUsers">Find Users</Button>
+		<Button class="button" width="80%" onClick="goToProjects">View All Projects</Button>
+		<Button class="button" width="80%" onClick="logout">Log Out</Button>
 	</Window>
 </Alloy>

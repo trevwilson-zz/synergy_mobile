@@ -25,22 +25,18 @@ function Controller() {
     $.__views.matchWin.add($.__views.matchTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var collection = Alloy.createCollection("projects");
+    var collection = Alloy.createCollection("matches");
     collection.fetch({
         success: function() {
             var rows = [];
             _.each(collection.models, function(element) {
-                console.log(element);
-                var controller = Alloy.createController("matchRow", {
+                var controller = Alloy.createController("projectRow", {
                     name: element.attributes.name,
                     tagline: element.attributes.tagline,
                     id: element.attributes.id
                 });
-                console.log("made controller");
                 var view = controller.getView();
-                console.log("made view");
                 rows.push(view);
-                console.log("pushed to row");
             });
             $.matchTable.setData(rows);
         },

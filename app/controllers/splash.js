@@ -5,7 +5,3 @@ function goToLogin(e){
 function goToSignup(e){
 	Alloy.createController("signup").getView().open();
 }
-
-function skipAuth(e){
-	Alloy.createController("index").getView().open();
-}

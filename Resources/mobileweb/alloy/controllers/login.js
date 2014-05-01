@@ -3,7 +3,12 @@ function Controller() {
         var xhr = Titanium.Network.createHTTPClient({
             timeout: 2e3,
             onload: function() {
-                alert(this.responseText);
+                response = JSON.parse(this.responseText);
+                if (true == response.success) {
+                    alert(response.id);
+                    Alloy.Globals.user_id = response.id;
+                    Alloy.createController("index").getView().open();
+                } else alert("Incorrect email or password");
             },
             onerror: function() {
                 Ti.API.error(this.responseText);
