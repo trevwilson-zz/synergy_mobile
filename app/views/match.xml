@@ -1,6 +1,6 @@
 <Alloy>
 	<Window id="matchWin" title="Your Matches" class="container">
-		<Button width="80%">Filter Results</Button>
+		<Label class="h2" id="start">Sorry, no matches found.</Label>
 		<TableView id="matchTable">
 		</TableView>
 	</Window>

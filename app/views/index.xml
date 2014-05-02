@@ -1,9 +1,10 @@
 <Alloy>
 	<Window class="container" id="win" onOpen="doOpen">
-		<Label class="Subtitle">Welcome to Synergy, a platform for collaboration</Label>
-		<Button class="button" width="80%" onClick="goToMatchmaker">Get Matched</Button>
-		<Button class="button" width="80%" onClick="goToUsers">Find Users</Button>
-		<Button class="button" width="80%" onClick="goToProjects">View All Projects</Button>
-		<Button class="button" width="80%" onClick="logout">Log Out</Button>
+		<Label id="start" class="h2" width="80%">Welcome to Synergy, a platform for collaboration</Label>
+		<Button class="button-main" width="80%" onClick="goToMatchmaker">Get Matched</Button>
+		<Label class="h3">or</Label>
+		<Button class="button" width="70%" onClick="goToUsers">Find Users</Button>
+		<Button class="button" width="70%" onClick="goToProjects">View All Projects</Button>
+		<Button class="button" width="70%" onClick="logout">Log Out</Button>
 	</Window>
 </Alloy>

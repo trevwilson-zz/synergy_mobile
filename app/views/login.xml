@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container">
-		<Label class="form-label">Email</Label>
+		<Label id="start" class="form-label">Email</Label>
 		<TextField id="email" width="80%"/>
 		<Label class="form-label">Password</Label>
 		<TextField id="password" width="80%"/>

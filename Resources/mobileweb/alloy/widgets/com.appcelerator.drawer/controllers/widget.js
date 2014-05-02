@@ -46,6 +46,8 @@ function Controller() {
     });
     $.__views.drawer && $.addTopLevelView($.__views.drawer);
     $.__views.pulltab = Ti.UI.createButton({
+        backgroundColor: "#2ba6cb",
+        borderRadius: "25",
         backgroundImage: "/images/com.appcelerator.drawer/PullTabUp.png",
         center: {
             x: "50%"

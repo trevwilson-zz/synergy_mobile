@@ -1,0 +1,59 @@
+"Window": {
+	backgroundColor:"#274e82",
+	layout:"vertical"
+}
+
+"Label": {
+	font: {
+		fontFamily:'Helvetica'
+	}
+}
+"Button": {
+	backgroundColor:"#2ba6cb",
+	borderRadius:'25'
+}
+"TableView": {
+	width:'90%',
+	layout:'vertical',
+	top:'10dp'
+}
+
+".h2": {
+	color:"white",
+	font: {
+		fontSize: '24dp'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+".h1": {
+	color:"white",
+	font: {
+		fontSize: '32dp',
+		fontWeight: 'bold'
+	}
+}
+
+".form-label": {
+	color:"white",
+	font: {
+		fontSize: '18dp'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+}
+
+".h4": {
+	color:"black",
+	font: {
+		fontSize: '22dp'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+}
+
+".h5": {
+	color:"black",
+	font: {
+		fontSize: '18dp'
+	},
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT
+}

@@ -7,13 +7,16 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.userWin = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "userWin",
         title: "Users"
     });
     $.__views.userWin && $.addTopLevelView($.__views.userWin);
     $.__views.usersTable = Ti.UI.createTableView({
+        width: "90%",
+        layout: "vertical",
+        top: "10dp",
         id: "usersTable"
     });
     $.__views.userWin.add($.__views.usersTable);
@@ -30,6 +33,12 @@ function Controller() {
                     id: element.attributes.id
                 });
                 var view = controller.getView();
+                rows.push(view);
+                view = Titanium.UI.createTableViewRow({
+                    id: "spacer",
+                    height: "10dp",
+                    color: "transparent"
+                });
                 rows.push(view);
             });
             $.usersTable.setData(rows);

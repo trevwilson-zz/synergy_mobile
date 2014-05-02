@@ -1,5 +1,6 @@
 "#row": {
-	backgroundColor:"red",
-	layout:"vertical",
-	width:"80%"
+	top:'10dp',
+	borderRadius:'3',
+	backgroundColor:'white',
+	layout:'vertical'
 }

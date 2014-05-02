@@ -13,18 +13,25 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.row = Ti.UI.createTableViewRow({
-        backgroundColor: "red",
+        top: "10dp",
+        borderRadius: "3",
+        backgroundColor: "white",
         layout: "vertical",
-        width: "80%",
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
     goToProject ? $.__views.row.addEventListener("click", goToProject) : __defers["$.__views.row!click!goToProject"] = true;
     $.__views.name = Ti.UI.createLabel({
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "name"
     });
     $.__views.row.add($.__views.name);
     $.__views.tagline = Ti.UI.createLabel({
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "tagline"
     });
     $.__views.row.add($.__views.tagline);

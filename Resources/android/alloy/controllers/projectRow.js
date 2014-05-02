@@ -1,11 +1,11 @@
 function Controller() {
-    function goToUser() {
-        Alloy.createController("user", {
+    function goToProject() {
+        Alloy.createController("project", {
             id: args.id
         }).getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "usersRow";
+    this.__controllerPath = "projectRow";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
@@ -20,27 +20,31 @@ function Controller() {
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
-    goToUser ? $.__views.row.addEventListener("click", goToUser) : __defers["$.__views.row!click!goToUser"] = true;
+    goToProject ? $.__views.row.addEventListener("click", goToProject) : __defers["$.__views.row!click!goToProject"] = true;
     $.__views.name = Ti.UI.createLabel({
         font: {
-            fontFamily: "Helvetica"
+            fontSize: "22dp"
         },
+        color: "black",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         id: "name"
     });
     $.__views.row.add($.__views.name);
-    $.__views.email = Ti.UI.createLabel({
+    $.__views.tagline = Ti.UI.createLabel({
         font: {
-            fontFamily: "Helvetica"
+            fontSize: "18dp"
         },
-        id: "email"
+        color: "black",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        id: "tagline"
     });
-    $.__views.row.add($.__views.email);
+    $.__views.row.add($.__views.tagline);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};
     $.name.text = args.name;
-    $.email.text = args.email;
-    __defers["$.__views.row!click!goToUser"] && $.__views.row.addEventListener("click", goToUser);
+    $.tagline.text = args.tagline;
+    __defers["$.__views.row!click!goToProject"] && $.__views.row.addEventListener("click", goToProject);
     _.extend($, exports);
 }
 

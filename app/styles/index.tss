@@ -1,4 +1,17 @@
-".container": {
-	backgroundColor:"white",
-	layout:"vertical"
+"#start": {
+	top:'30dp'
+}
+
+".h3": {
+	textAlign: Ti.UI.TEXT_ALIGN_CENTER,
+	top:'10dp'
+}
+
+".button": {
+	top:'10dp'
+}
+
+
+".button-main": {
+	top:'20dp'
 }

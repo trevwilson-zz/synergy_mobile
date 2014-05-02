@@ -7,23 +7,40 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.user = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "user"
     });
     $.__views.user && $.addTopLevelView($.__views.user);
     $.__views.name = Ti.UI.createLabel({
-        text: "Trevor Wilson",
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "name"
     });
     $.__views.user.add($.__views.name);
     $.__views.email = Ti.UI.createLabel({
-        text: "trevwilson16@gmail.com",
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "email"
     });
     $.__views.user.add($.__views.email);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    var args = arguments[0] || {};
+    var id = args.id;
+    var collection = Alloy.createCollection("users");
+    collection.fetch({
+        success: function() {
+            var user = collection.get(id).toJSON();
+            $.name.text = user.name;
+            $.email.text = user.email;
+        },
+        error: function() {
+            Ti.API.error("hmm - this is not good!");
+        }
+    });
     _.extend($, exports);
 }
 

@@ -1,6 +1,6 @@
 <Alloy>
   <TableViewRow id="row" onClick="goToUser">
-    <Label id="name"/>
-    <Label id="email"/>
+    <Label class='h4' id="name"/>
+    <Label class='h5' id="email"/>
   </TableViewRow>
 </Alloy>

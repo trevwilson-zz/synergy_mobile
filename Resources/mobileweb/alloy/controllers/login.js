@@ -5,7 +5,6 @@ function Controller() {
             onload: function() {
                 response = JSON.parse(this.responseText);
                 if (true == response.success) {
-                    alert(response.id);
                     Alloy.Globals.user_id = response.id;
                     Alloy.createController("index").getView().open();
                 } else alert("Incorrect email or password");
@@ -29,41 +28,56 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.login = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "login"
     });
     $.__views.login && $.addTopLevelView($.__views.login);
-    $.__views.__alloyId5 = Ti.UI.createLabel({
+    $.__views.start = Ti.UI.createLabel({
+        font: {
+            fontSize: "18dp"
+        },
+        color: "white",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        top: "30dp",
         text: "Email",
-        id: "__alloyId5"
+        id: "start"
     });
-    $.__views.login.add($.__views.__alloyId5);
+    $.__views.login.add($.__views.start);
     $.__views.email = Ti.UI.createTextField({
         id: "email",
         width: "80%"
     });
     $.__views.login.add($.__views.email);
-    $.__views.__alloyId6 = Ti.UI.createLabel({
+    $.__views.__alloyId5 = Ti.UI.createLabel({
+        font: {
+            fontSize: "18dp"
+        },
+        color: "white",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         text: "Password",
-        id: "__alloyId6"
+        id: "__alloyId5"
     });
-    $.__views.login.add($.__views.__alloyId6);
+    $.__views.login.add($.__views.__alloyId5);
     $.__views.password = Ti.UI.createTextField({
+        passwordMask: true,
         id: "password",
         width: "80%"
     });
     $.__views.login.add($.__views.password);
-    $.__views.__alloyId7 = Ti.UI.createButton({
+    $.__views.__alloyId6 = Ti.UI.createButton({
+        backgroundColor: "#2ba6cb",
+        borderRadius: "25",
+        top: "20dp",
         title: "Log In",
         width: "80%",
-        id: "__alloyId7"
+        id: "__alloyId6"
     });
-    $.__views.login.add($.__views.__alloyId7);
-    login ? $.__views.__alloyId7.addEventListener("click", login) : __defers["$.__views.__alloyId7!click!login"] = true;
+    $.__views.login.add($.__views.__alloyId6);
+    login ? $.__views.__alloyId6.addEventListener("click", login) : __defers["$.__views.__alloyId6!click!login"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId7!click!login"] && $.__views.__alloyId7.addEventListener("click", login);
+    __defers["$.__views.__alloyId6!click!login"] && $.__views.__alloyId6.addEventListener("click", login);
     _.extend($, exports);
 }
 

@@ -5,7 +5,6 @@ function login(e){
 	    	response = JSON.parse(this.responseText);
 	        // Successful return, do something with it
 	        if(response.success == true){
-	        	alert(response.id);
 	        	Alloy.Globals.user_id = response.id;
 	        	Alloy.createController("index").getView().open();
 	        }

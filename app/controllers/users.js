@@ -13,6 +13,12 @@ collection.fetch({
             });
             var view = controller.getView();
             rows.push(view);
+            view = Titanium.UI.createTableViewRow({
+            	id: 'spacer',
+            	height : '10dp',
+            	color: 'transparent'
+            });
+            rows.push(view);
         });
 		$.usersTable.setData(rows);
     },

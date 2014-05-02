@@ -14,39 +14,57 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.splash = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "splash"
     });
     $.__views.splash && $.addTopLevelView($.__views.splash);
-    $.__views.__alloyId13 = Ti.UI.createLabel({
+    $.__views.__alloyId11 = Ti.UI.createLabel({
+        font: {
+            fontSize: "32dp",
+            fontWeight: "bold"
+        },
+        color: "white",
+        top: "30dp",
         text: "Synergy",
+        id: "__alloyId11"
+    });
+    $.__views.splash.add($.__views.__alloyId11);
+    $.__views.__alloyId12 = Ti.UI.createLabel({
+        font: {
+            fontSize: "24dp"
+        },
+        color: "white",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+        top: "10dp",
+        text: "Welcome to Synergy, a platform for collaboration",
+        id: "__alloyId12"
+    });
+    $.__views.splash.add($.__views.__alloyId12);
+    $.__views.__alloyId13 = Ti.UI.createButton({
+        backgroundColor: "#2ba6cb",
+        borderRadius: "25",
+        top: "10dp",
+        title: "Log In",
+        width: "80%",
         id: "__alloyId13"
     });
     $.__views.splash.add($.__views.__alloyId13);
-    $.__views.__alloyId14 = Ti.UI.createLabel({
-        text: "Welcome to Synergy, a platform for collaboration",
+    goToLogin ? $.__views.__alloyId13.addEventListener("click", goToLogin) : __defers["$.__views.__alloyId13!click!goToLogin"] = true;
+    $.__views.__alloyId14 = Ti.UI.createButton({
+        backgroundColor: "#2ba6cb",
+        borderRadius: "25",
+        top: "10dp",
+        title: "Sign Up",
+        width: "80%",
         id: "__alloyId14"
     });
     $.__views.splash.add($.__views.__alloyId14);
-    $.__views.__alloyId15 = Ti.UI.createButton({
-        title: "Log In",
-        width: "80%",
-        id: "__alloyId15"
-    });
-    $.__views.splash.add($.__views.__alloyId15);
-    goToLogin ? $.__views.__alloyId15.addEventListener("click", goToLogin) : __defers["$.__views.__alloyId15!click!goToLogin"] = true;
-    $.__views.__alloyId16 = Ti.UI.createButton({
-        title: "Sign Up",
-        width: "80%",
-        id: "__alloyId16"
-    });
-    $.__views.splash.add($.__views.__alloyId16);
-    goToSignup ? $.__views.__alloyId16.addEventListener("click", goToSignup) : __defers["$.__views.__alloyId16!click!goToSignup"] = true;
+    goToSignup ? $.__views.__alloyId14.addEventListener("click", goToSignup) : __defers["$.__views.__alloyId14!click!goToSignup"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId15!click!goToLogin"] && $.__views.__alloyId15.addEventListener("click", goToLogin);
-    __defers["$.__views.__alloyId16!click!goToSignup"] && $.__views.__alloyId16.addEventListener("click", goToSignup);
+    __defers["$.__views.__alloyId13!click!goToLogin"] && $.__views.__alloyId13.addEventListener("click", goToLogin);
+    __defers["$.__views.__alloyId14!click!goToSignup"] && $.__views.__alloyId14.addEventListener("click", goToSignup);
     _.extend($, exports);
 }
 

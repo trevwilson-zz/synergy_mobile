@@ -1,6 +1,8 @@
 function Controller() {
     function goToUser() {
-        Alloy.createController("user").getView().open();
+        Alloy.createController("user", {
+            id: args.id
+        }).getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "usersRow";
@@ -11,18 +13,29 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.row = Ti.UI.createTableViewRow({
-        backgroundColor: "red",
+        top: "10dp",
+        borderRadius: "3",
+        backgroundColor: "white",
         layout: "vertical",
-        width: "80%",
         id: "row"
     });
     $.__views.row && $.addTopLevelView($.__views.row);
     goToUser ? $.__views.row.addEventListener("click", goToUser) : __defers["$.__views.row!click!goToUser"] = true;
     $.__views.name = Ti.UI.createLabel({
+        font: {
+            fontSize: "22dp"
+        },
+        color: "black",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         id: "name"
     });
     $.__views.row.add($.__views.name);
     $.__views.email = Ti.UI.createLabel({
+        font: {
+            fontSize: "18dp"
+        },
+        color: "black",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         id: "email"
     });
     $.__views.row.add($.__views.email);

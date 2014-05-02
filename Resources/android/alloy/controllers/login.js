@@ -3,7 +3,11 @@ function Controller() {
         var xhr = Titanium.Network.createHTTPClient({
             timeout: 2e3,
             onload: function() {
-                alert(this.responseText);
+                response = JSON.parse(this.responseText);
+                if (true == response.success) {
+                    Alloy.Globals.user_id = response.id;
+                    Alloy.createController("index").getView().open();
+                } else alert("Incorrect email or password");
             },
             onerror: function() {
                 Ti.API.error(this.responseText);
@@ -24,32 +28,47 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.login = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "login"
     });
     $.__views.login && $.addTopLevelView($.__views.login);
-    $.__views.__alloyId4 = Ti.UI.createLabel({
+    $.__views.start = Ti.UI.createLabel({
+        font: {
+            fontSize: "18dp"
+        },
+        color: "white",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+        top: "30dp",
         text: "Email",
-        id: "__alloyId4"
+        id: "start"
     });
-    $.__views.login.add($.__views.__alloyId4);
+    $.__views.login.add($.__views.start);
     $.__views.email = Ti.UI.createTextField({
         id: "email",
         width: "80%"
     });
     $.__views.login.add($.__views.email);
     $.__views.__alloyId5 = Ti.UI.createLabel({
+        font: {
+            fontSize: "18dp"
+        },
+        color: "white",
+        textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
         text: "Password",
         id: "__alloyId5"
     });
     $.__views.login.add($.__views.__alloyId5);
     $.__views.password = Ti.UI.createTextField({
+        passwordMask: true,
         id: "password",
         width: "80%"
     });
     $.__views.login.add($.__views.password);
     $.__views.__alloyId6 = Ti.UI.createButton({
+        backgroundColor: "#2ba6cb",
+        borderRadius: "25",
+        top: "20dp",
         title: "Log In",
         width: "80%",
         id: "__alloyId6"

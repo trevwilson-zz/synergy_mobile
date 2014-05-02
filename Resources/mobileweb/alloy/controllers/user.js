@@ -7,16 +7,22 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.user = Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "#274e82",
         layout: "vertical",
         id: "user"
     });
     $.__views.user && $.addTopLevelView($.__views.user);
     $.__views.name = Ti.UI.createLabel({
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "name"
     });
     $.__views.user.add($.__views.name);
     $.__views.email = Ti.UI.createLabel({
+        font: {
+            fontFamily: "Helvetica"
+        },
         id: "email"
     });
     $.__views.user.add($.__views.email);
